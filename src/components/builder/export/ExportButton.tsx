@@ -41,27 +41,28 @@ export default function ExportButton({
       onClick={handleExport}
       disabled={isExporting || !editor}
       style={{
-        padding: "8px 16px",
-        backgroundColor: isExporting ? "#6b7280" : "#2563eb",
-        color: "white",
-        border: "none",
-        borderRadius: "6px",
+        padding: "6px 12px",
+        backgroundColor: isExporting ? "rgba(0,0,0,0.05)" : "transparent",
+        color: "inherit",
+        border: "1px solid rgba(0,0,0,0.1)",
+        borderRadius: "4px",
         cursor: isExporting ? "not-allowed" : "pointer",
-        fontSize: "14px",
+        fontSize: "13px",
         fontWeight: 500,
         display: "flex",
         alignItems: "center",
-        gap: "8px",
-        transition: "background-color 0.2s",
+        gap: "6px",
+        transition: "all 0.2s",
+        height: "32px", // Match typical toolbar height
       }}
       onMouseEnter={(e) => {
         if (!isExporting) {
-          e.currentTarget.style.backgroundColor = "#1d4ed8";
+          e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.05)";
         }
       }}
       onMouseLeave={(e) => {
         if (!isExporting) {
-          e.currentTarget.style.backgroundColor = "#2563eb";
+          e.currentTarget.style.backgroundColor = "transparent";
         }
       }}
     >
@@ -107,7 +108,7 @@ export default function ExportButton({
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
             />
           </svg>
-          Export ZIP
+          Export
         </>
       )}
       <style>{`

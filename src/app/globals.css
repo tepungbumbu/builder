@@ -17,3 +17,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Fix Heroicons preview stroke-width in blocks panel */
+.heroicon-preview path,
+.heroicon-preview circle,
+.heroicon-preview rect,
+.heroicon-preview line,
+.heroicon-preview polyline,
+.heroicon-preview polygon {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1.5 !important;
+}
+
+/* Override GrapesJS default fill on block media paths */
+.gs-utl-block-media .heroicon-preview path,
+.gs-utl-block-media .heroicon-preview rect {
+  fill: inherit !important;
+}
